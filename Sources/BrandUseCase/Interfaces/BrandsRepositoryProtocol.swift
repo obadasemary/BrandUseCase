@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol BrandsRepositoryProtocol {
-    func getBrands(
+    func getBrandDetails(
         brandId: String,
         page: Int,
         perPage: Int

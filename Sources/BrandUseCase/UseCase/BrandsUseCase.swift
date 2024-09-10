@@ -30,7 +30,7 @@ extension BrandsUseCase: BrandsUseCaseProtocol {
         page: Int,
         perPage: Int
     ) async throws -> BrandResponseEntity {
-        return try await brandsRepository.getBrands(
+        return try await brandsRepository.getBrandDetails(
             brandId: brandId,
             page: page,
             perPage: perPage

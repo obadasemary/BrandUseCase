@@ -19,7 +19,8 @@ final class BrandsUseCaseTests: XCTestCase {
 
 // Mock Repository
 final class MockBrandsRepository: BrandsRepositoryProtocol {
-    func getBrands(brandId: String, page: Int, perPage: Int) async throws -> BrandResponseEntity {
+    
+    func getBrandDetails(brandId: String, page: Int, perPage: Int) async throws -> BrandResponseEntity {
         return BrandResponseEntity.init(
             status: 200,
             success: true,
