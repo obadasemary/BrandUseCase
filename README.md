@@ -9,10 +9,10 @@ BrandUseCase's compact syntax and extensive feature set allow requests with powe
 
 # How to Use it?
 
--  Once you have your Swift package set up, adding `CoreAPI` as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift` or the Package list in Xcode.
+-  Once you have your Swift package set up, adding `BrandUseCase` as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift` or the Package list in Xcode.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/obadasemary/BrandUseCase.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/obadasemary/BrandUseCase.git", .upToNextMajor(from: "1.0.1"))
 ]
 ```
