@@ -9,10 +9,11 @@ import Foundation
 
 // Define the main response structure
 public struct BrandResponseEntity: Decodable {
-    let status: Int
-    let success: Bool
-    let data: [ProductEntity]
-    let cursor: Cursor?
+   
+    public let status: Int
+    public let success: Bool
+    public let data: [ProductEntity]
+    public let cursor: Cursor?
     
     enum CodingKeys: CodingKey {
         case status
@@ -48,45 +49,45 @@ public struct ProductEntity: Decodable, Identifiable {
     public typealias ID = String
     
     public let id: ID
-    let name: String?
-    let description: String?
-    let url: String?
-    let promotionTitle: String?
-    let subtitle: String?
-    let type: String?
-    let status: String?
-    let weight: Double?
-    let calories: Int?
-    let sku: String?
-    let rating: Double?
-    let quantity: Int?
-    let soldQuantity: Int?
-    let maxQuantity: Int?
-    let isTaxable: Bool?
-    let category: Category?
-    let image: Image?
-    let brand: Brand?
-    let tags: [Tag]?
-    let canAddNote: Bool?
-    let canUploadFile: Bool?
-    let isOnSale: Bool?
-    let isHiddedQuantity: Bool?
-    let isAvailable: Bool?
-    let isDonation: Bool?
-    let isOutOfStock: Bool?
-    let isRequireShipping: Bool?
-    let regularPrice: Double?
-    let price: Double?
-    let salePrice: Double?
-    let startingPrice: Double?
-    let currency: String?
-    let mpn: String?
-    let gtin: String?
-    let discountEnds: String?
-    let hasOptions: Bool?
-    let pinned: Bool?
-    let spamStatus: Int?
-    let customUrl: String?
+    public let name: String?
+    public let description: String?
+    public let url: String?
+    public let promotionTitle: String?
+    public let subtitle: String?
+    public let type: String?
+    public let status: String?
+    public let weight: Double?
+    public let calories: Int?
+    public let sku: String?
+    public let rating: Rating?
+    public let quantity: Int?
+    public let soldQuantity: Int?
+    public let maxQuantity: Int?
+    public let isTaxable: Bool?
+    public let category: Category?
+    public let image: Image?
+    public let brand: Brand?
+    public let tags: [Tag]?
+    public let canAddNote: Bool?
+    public let canUploadFile: Bool?
+    public let isOnSale: Bool?
+    public let isHiddedQuantity: Bool?
+    public let isAvailable: Bool?
+    public let isDonation: Bool?
+    public let isOutOfStock: Bool?
+    public let isRequireShipping: Bool?
+    public let regularPrice: Double?
+    public let price: Double?
+    public let salePrice: Double?
+    public let startingPrice: Double?
+    public let currency: String?
+    public let mpn: String?
+    public let gtin: String?
+    public let discountEnds: String?
+    public let hasOptions: Bool?
+    public let pinned: Bool?
+    public let spamStatus: Int?
+    public let customUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case id, name, description, url
@@ -132,7 +133,7 @@ public struct ProductEntity: Decodable, Identifiable {
         self.weight = try container.decodeIfPresent(Double.self, forKey: .weight)
         self.calories = try container.decodeIfPresent(Int.self, forKey: .calories)
         self.sku = try container.decodeIfPresent(String.self, forKey: .sku)
-        self.rating = try container.decodeIfPresent(Double.self, forKey: .rating)
+        self.rating = try container.decodeIfPresent(Rating.self, forKey: .rating)
         self.quantity = try container.decodeIfPresent(Int.self, forKey: .quantity)
         self.soldQuantity = try container.decodeIfPresent(Int.self, forKey: .soldQuantity)
         self.maxQuantity = try container.decodeIfPresent(Int.self, forKey: .maxQuantity)
@@ -175,7 +176,7 @@ public struct ProductEntity: Decodable, Identifiable {
         weight: Double?,
         calories: Int?,
         sku: String?,
-        rating: Double?,
+        rating: Rating?,
         quantity: Int?,
         soldQuantity: Int?,
         maxQuantity: Int?,
@@ -258,6 +259,12 @@ public extension BrandResponseEntity {
 
 public extension ProductEntity {
     
+    // Rating model
+    struct Rating: Decodable {
+        let count: Int?
+        let stars: Int?
+    }
+    
     // Category model
     struct Category: Codable {
         let name: String?
@@ -278,7 +285,7 @@ public extension ProductEntity {
     
     // Tag model
     struct Tag: Codable {
-        let name: String
+        let name: String?
         let url: String?
     }
 }

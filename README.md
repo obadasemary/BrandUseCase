@@ -13,6 +13,6 @@ BrandUseCase's compact syntax and extensive feature set allow requests with powe
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/obadasemary/BrandUseCase.git", .upToNextMajor(from: "1.0.2"))
+    .package(url: "https://github.com/obadasemary/BrandUseCase.git", .upToNextMajor(from: "1.0.3"))
 ]
 ```

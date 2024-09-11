@@ -1,5 +1,5 @@
 //
-//  BrandsUseCase.swift
+//  BrandDetailsUseCase.swift
 //
 //
 //  Created by Abdelrahman Mohamed on 10/09/2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol BrandsUseCaseProtocol {
+public protocol BrandDetailsUseCaseProtocol {
     func execute(
         brandId: String,
         page: Int,
@@ -15,22 +15,22 @@ public protocol BrandsUseCaseProtocol {
     ) async throws -> BrandResponseEntity
 }
 
-final class BrandsUseCase {
+final class BrandDetailsUseCase {
     
-    private let brandsRepository: BrandsRepositoryProtocol
+    private let brandDetailsRepository: BrandDetailsRepositoryProtocol
     
-    init(brandsRepository: BrandsRepositoryProtocol) {
-        self.brandsRepository = brandsRepository
+    init(brandDetailsRepository: BrandDetailsRepositoryProtocol) {
+        self.brandDetailsRepository = brandDetailsRepository
     }
 }
 
-extension BrandsUseCase: BrandsUseCaseProtocol {
+extension BrandDetailsUseCase: BrandDetailsUseCaseProtocol {
     func execute(
         brandId: String,
         page: Int,
         perPage: Int
     ) async throws -> BrandResponseEntity {
-        return try await brandsRepository.getBrandDetails(
+        return try await brandDetailsRepository.getBrandDetails(
             brandId: brandId,
             page: page,
             perPage: perPage
