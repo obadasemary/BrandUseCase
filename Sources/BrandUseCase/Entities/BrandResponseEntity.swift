@@ -253,7 +253,7 @@ public extension BrandResponseEntity {
     // Cursor model for pagination
     struct Cursor: Codable {
         let current: String
-        let next: String?
+        public let next: String?
     }
 }
 
@@ -273,7 +273,7 @@ public extension ProductEntity {
     
     // Image model
     struct Image: Codable {
-        let url: String?
+        public let url: String?
     }
     
     // Brand model
