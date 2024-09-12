@@ -12,14 +12,14 @@ public struct ProductAdapter: Identifiable, Hashable {
     public typealias ID = String
     
     public let id: ID
-    let imagePath: String
-    let imageResource: RemoteImageResource
-    let name: String
-    let promotionTitle: String
-    let subtitle: String
-    let price: Double
-    let salePrice: Double
-    let startingPrice: Double
+    public let imagePath: String
+    public let imageResource: RemoteImageResource
+    public let name: String
+    public let promotionTitle: String
+    public let subtitle: String
+    public let price: Double
+    public let salePrice: Double
+    public let startingPrice: Double
     
     public init(
         id: ID,
@@ -44,7 +44,7 @@ public struct ProductAdapter: Identifiable, Hashable {
 }
 
 extension ProductAdapter {
-    init(_ entity: ProductEntity) {
+    public init(_ entity: ProductEntity) {
         self.id = entity.id
         self.imagePath = entity.image?.url ?? ""
         self.imageResource = .init(path: self.imagePath, placeholder: Image("emptyProductPhoto"))
