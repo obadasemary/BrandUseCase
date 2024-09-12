@@ -1,0 +1,24 @@
+{
+  "originHash" : "a745e0609744121b9e9c81544ce7a20bd87be18a7ce75cec63920b3692160e43",
+  "pins" : [
+    {
+      "identity" : "brandremoteimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/obadasemary/BrandRemoteImage.git",
+      "state" : {
+        "revision" : "a612e2112345256578050319f1c26ae4518e92f7",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "2ef543ee21d63734e1c004ad6c870255e8716c50",
+        "version" : "7.12.0"
+      }
+    }
+  ],
+  "version" : 3
+}
