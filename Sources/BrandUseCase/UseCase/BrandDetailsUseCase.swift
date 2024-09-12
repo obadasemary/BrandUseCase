@@ -11,29 +11,32 @@ public protocol BrandDetailsUseCaseProtocol {
     func execute(
         brandId: String,
         page: Int,
-        perPage: Int
+        perPage: Int,
+        cursor: String?
     ) async throws -> BrandResponseEntity
 }
 
-final class BrandDetailsUseCase {
+public final class BrandDetailsUseCase {
     
     private let brandDetailsRepository: BrandDetailsRepositoryProtocol
     
-    init(brandDetailsRepository: BrandDetailsRepositoryProtocol) {
+    public init(brandDetailsRepository: BrandDetailsRepositoryProtocol) {
         self.brandDetailsRepository = brandDetailsRepository
     }
 }
 
 extension BrandDetailsUseCase: BrandDetailsUseCaseProtocol {
-    func execute(
+    public func execute(
         brandId: String,
         page: Int,
-        perPage: Int
+        perPage: Int,
+        cursor: String?
     ) async throws -> BrandResponseEntity {
         return try await brandDetailsRepository.getBrandDetails(
             brandId: brandId,
             page: page,
-            perPage: perPage
+            perPage: perPage,
+            cursor: cursor
         )
     }
 }

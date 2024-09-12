@@ -11,6 +11,7 @@ public protocol BrandDetailsRepositoryProtocol {
     func getBrandDetails(
         brandId: String,
         page: Int,
-        perPage: Int
+        perPage: Int,
+        cursor: String?
     ) async throws -> BrandResponseEntity
 }
